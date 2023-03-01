@@ -19,6 +19,8 @@ public class HttpClientDemo {
                 .header("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com")
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        
         System.out.println(response.body());
     }
 }
