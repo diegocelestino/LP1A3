@@ -11,7 +11,7 @@ import java.util.Scanner;
     // Compras entre R$ 100,00 e R$ 499,99 - 10% de desconto
     // Compras iguais ou superiores a R$ 500,00 - 15% de desconto
 
-public class ExerciseThree {
+public class Exercise3 {
 
    
     public static void main(String[] args) {

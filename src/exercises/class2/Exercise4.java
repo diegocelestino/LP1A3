@@ -25,7 +25,7 @@ import java.util.Scanner;
 //     Avalie os métodos da classe String e Integer e identifique quais poderiam ser utilizados para validar todos os critérios do código identificador (Não utilizar expressões regulares) (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html  https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html)
 //      Crie um programa em Java que solicita ao usuário um identificador e apresenta se o que foi informado é um valor válido ou inválido. 
 
-public class ExerciseFour {
+public class Exercise4 {
 
     public static void main(String[] args) {
         
@@ -35,33 +35,49 @@ public class ExerciseFour {
         System.out.print("Insert the id Code: ");
         code = input.next();
 
-        System.out.print(verifyBR(code));
-        System.out.print(verifyDigit(code));
+        testCode(code);
 
     }
 
+    public static void testCode(String code){
+        if(verifyDigitsQtd(code) && verifyBR(code) && verifyDigits(code)){
+            System.out.println("Code is valid");
+        } else {
+            System.out.println("Code is invalid");
+        }
+    }
 
+    public static boolean verifyDigitsQtd(String code){
+        if (code.length() != 7){
+            return false;
+        }
 
+        return true;
+    }
 
     public static boolean verifyBR(String code){
-        if (code.charAt(0) == 'B' && code.charAt(1) == 'R'){
-            return true;
+        if(code.charAt(0) != 'B' || code.charAt(1) != 'R'){
+            return false;
         }
-        return false;
+        return true;
     }
-    
-    public static boolean verifyDigit(String code){
-        try {
-            char[] array = new char[3];
-            for (int i = 2; i < 6; i++) {
-                array[i - 2] = code.charAt(i);
-             }
-            String digit = array.toString();
-            return Integer.parseInt(digit) >= 1 && Integer.parseInt(digit) <= 9999;
-            
-        } catch (InputMismatchException e) {
-            System.out.println("The value typed is not a integer, try again.");
+
+    public static boolean verifyDigits(String code){
+        try{
+            Integer.valueOf(String.copyValueOf(code.toCharArray(), 2, 4));
+            return true;
+        } catch (RuntimeException e) {
             return false;
         }
     }
+
+    public static boolean verifyX(String code){
+        if(code.charAt(6) != 'X'){
+            return false;
+        }
+        return true;
+    }
+
+
+    
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 // Escreva um programa em Java que solicita ao usuário um número inteiro e apresenta seu antecessor e sucessor.
 
-public class ExerciseOne {
+public class Exercise1 {
 
     public static void main(String[] args) {
         
