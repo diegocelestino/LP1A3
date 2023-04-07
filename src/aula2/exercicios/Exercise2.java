@@ -1,4 +1,4 @@
-package exercises.class2;
+package aula2.exercicios;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
