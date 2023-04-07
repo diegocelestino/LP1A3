@@ -1,4 +1,4 @@
-package examples.class3;
+package aula3.exemplos;
 
 public class Quadrado {
     public static final String MENSAGEM_LADO_INVALIDO = "Lado deve ser maior que zero";

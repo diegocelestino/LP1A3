@@ -1,4 +1,4 @@
-package examples.class3;
+package aula3.exemplos;
 
 public class Endereco {
     private String cep;

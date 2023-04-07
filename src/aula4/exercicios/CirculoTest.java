@@ -1,4 +1,4 @@
-package examples.class4;
+package aula4.exercicios;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import examples.class3.Circulo;
-import examples.class3.Quadrado;
+import aula3.exemplos.Quadrado;
+import aula3.exercicios.Circulo;
 
 public class CirculoTest {
     
@@ -49,52 +49,52 @@ public class CirculoTest {
     }
 
     @Test
-    public void deveMudarOValorDoLado() {
+    public void deveMudarOValorDoRaio() {
 
-        Quadrado quadrado = new Quadrado(10.0);
+        Circulo circulo = new Circulo(10.0);
 
-        quadrado.setLado(5.0);
+        circulo.setRaio(5.0);
 
-        assertEquals(5.0, quadrado.getLado());
+        assertEquals(5.0, circulo.getRaio());
     }
 
     @Test
-    public void deveLancarExceptionSeLadoIgualAZero() {
+    public void deveLancarExceptionSeRaioIgualAZero() {
         assertThrowsExactly(IllegalArgumentException.class, ()-> {
-            new Quadrado(0);
+            new Circulo(0);
             });
     }
 
     @Test
-    public void deveLancarExceptionSeLadoIgualAZeroComAMensagemCorreta() {
+    public void deveLancarExceptionSeRaioIgualAZeroComAMensagemCorreta() {
         IllegalArgumentException exception = assertThrowsExactly(
-            IllegalArgumentException.class, ()-> {new Quadrado(0);});
+            IllegalArgumentException.class, ()-> {new Circulo(0);});
 
-            assertEquals("Lado deve ser maior que zero", exception.getMessage());
+            assertEquals("Raio deve ser maior que zero", exception.getMessage());
     }
 
     @Test
-    public void deveLancarExceptionSeLadoForNegativo() {
+    public void deveLancarExceptionSeRaioForNegativo() {
         assertThrowsExactly(IllegalArgumentException.class, ()-> {
-            new Quadrado(-10.0);
+            new Circulo(-10.0);
             });
     }
 
     @Test
-    public void deveLancarExceptionSeLadoForNegativoComAMensagemCorreta() {
+    public void deveLancarExceptionSeRaioForNegativoComAMensagemCorreta() {
         IllegalArgumentException exception = assertThrowsExactly(
-            IllegalArgumentException.class, ()-> {new Quadrado(-10.0);});
+            IllegalArgumentException.class, ()-> {new Circulo(-10.0);});
 
-            assertEquals("Lado deve ser maior que zero", exception.getMessage());
+            assertEquals("Raio deve ser maior que zero", exception.getMessage());
     }
 
 
     @ParameterizedTest
     @ValueSource(doubles = {1.0, 1.5, 3, 100.0})
-    public void testaVariosValoresParaOLado(double lado){
-            Quadrado quadrado = new Quadrado(lado);
+    public void testaVariosValoresParaORaio(double raio){
+            Circulo circulo = new Circulo(raio);
 
-            assertEquals(lado, quadrado.getLado());
+            assertEquals(raio, circulo.getRaio());
     }
 
 }

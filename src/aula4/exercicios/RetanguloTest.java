@@ -1,4 +1,4 @@
-package examples.class4;
+package aula4.exercicios;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import examples.class3.Quadrado;
-import examples.class3.Retangulo;
+import aula3.exemplos.Retangulo;
 
 public class RetanguloTest {
     

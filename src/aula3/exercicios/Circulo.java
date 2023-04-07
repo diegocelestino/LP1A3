@@ -1,7 +1,7 @@
-package examples.class3;
+package aula3.exercicios;
 
 public class Circulo {
-    public static final String MENSAGEM_LADO_INVALIDO = "Lado deve ser maior que zero";
+    public static final String MENSAGEM_LADO_INVALIDO = "Raio deve ser maior que zero";
     public static final double PI = 3.141592;
     private double raio;
 

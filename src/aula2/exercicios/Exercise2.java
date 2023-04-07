@@ -16,7 +16,6 @@ public class Exercise2 {
         Integer sum = 0;
 
         boolean valido = false;
-        System.out.println(!valido);
 
         while (integers.size() < 3) {
             try {
