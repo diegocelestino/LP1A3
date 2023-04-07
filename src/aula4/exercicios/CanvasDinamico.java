@@ -1,34 +1,36 @@
-package aula3.exemplos;
+package aula4.exercicios;
 
+import java.util.Arrays;
 
-public class Canvas {
+import aula3.exemplos.Quadrado;
+import aula3.exemplos.Retangulo;
+
+public class CanvasDinamico {
     private Quadrado[] quadrados;
     private Retangulo[] retangulos;
     private int quantidadeDeQuadrados;
     private int quantidadeDeRetangulos;
 
-    public Canvas(int capacidadeQuadrados, int capacidadeRetangulos) {
-        quadrados = new Quadrado[capacidadeQuadrados];
-        retangulos = new Retangulo[capacidadeRetangulos];    
+    public CanvasDinamico() {
+        quadrados = new Quadrado[0];
+        retangulos = new Retangulo[0];    
         quantidadeDeQuadrados = 0;
         quantidadeDeRetangulos = 0;
     }
 
     public void adicionarQuadrado(Quadrado quadrado){
-        if(quantidadeDeQuadrados == quadrados.length){
-            throw new RuntimeException("Array de quadrados está cheio");
-        }
-
-        quadrados[quantidadeDeQuadrados] = quadrado;
+        int tamanhoDinamico = quantidadeDeQuadrados + 1;
+        Quadrado[] quadradosDinamico = Arrays.copyOf(quadrados, tamanhoDinamico);
+        quadradosDinamico[quantidadeDeQuadrados] = quadrado;
+        quadrados = quadradosDinamico;
         quantidadeDeQuadrados++;
     }
 
     public void adicionarRetangulo(Retangulo retangulo){
-        if(quantidadeDeRetangulos == retangulos.length){
-            throw new RuntimeException("Array de retangulos está cheio");
-        }
-        
-        retangulos[quantidadeDeRetangulos] = retangulo;
+        int tamanhoDinamico = quantidadeDeRetangulos + 1;
+        Retangulo[] retanguloDinamico = Arrays.copyOf(retangulos, tamanhoDinamico);
+        retanguloDinamico[quantidadeDeRetangulos] = retangulo;
+        retangulos = retanguloDinamico;
         quantidadeDeRetangulos++;
     }
 
@@ -75,5 +77,4 @@ public class Canvas {
         
         return soma;
     }
-
 }
